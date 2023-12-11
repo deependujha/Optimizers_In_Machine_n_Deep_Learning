@@ -20,6 +20,7 @@ Where:
 - $\( S_t \)$ = EWMA at time 't'
 - $\( Y_t \)$ = Observation at time 't'
 - $\( \alpha \)$ = Smoothing factor (0 < $\( \alpha \)$ ≤ 1)
+- $\( \beta \)$ = Decaying factor (0 < $\( \beta \)$ ≤ 1)
 
 The smoothing factor $\( \alpha \)$ determines the rate of decay of the older observations' influence on the average.
 
