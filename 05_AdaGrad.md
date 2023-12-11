@@ -4,7 +4,12 @@
 
 - **Gradient in such cases remain very small and takes too long to reach minima via SGD, or SGD with Momentum, or NAG**.
 
+![AdaGrad Visualization](./assets/AdaGrad/AdaGrad_Visualization.gif)
+white: `AdaGrad`; cyan: `Gradient Descent`
+
 - AdaGrad is very fast in such scenarios. 😎
+
+- Based on the principle, **`the more you have updated a feature already, the less you will update it in the future, thus giving a chance for the others features (for example, the sparse features) to catch up`**.
 
 ---
 
@@ -44,4 +49,10 @@ Where:
 
 ## Disadvantages 🚫
 
-- It never reaches
+- **`It never reaches to global minima. It reaches very close to global minima, but not exactly minima.`**
+
+- The reason behind this is, we are essentially dividing (learning_rate) with (sum of gradient squares). After some epochs, (sum of gradient squares) becomes too big and when learning_rate is divided with this, almost no update is done to weights. Hence, it stuck at a point.
+
+- **`The problem of AdaGrad, however, is that it is incredibly slow. This is because the sum of gradient squared only grows and never shrinks.`**
+
+- Because of this, it is never used in complex (deep learning) architectures. But, rather used in Linear regression type algorithms.
