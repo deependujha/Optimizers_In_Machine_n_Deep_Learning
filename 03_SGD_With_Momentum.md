@@ -56,6 +56,8 @@ To understand SGD, we first we need to have good understanding of couple of thin
 
 - If $\beta = 1$, **there will be no decay**. It will keep oscillating. 
 
+- Velocity is denoted with `V` and we assume unit mass. (momentum in physics)
+
 ---
 
 ### SGD with momentum converging to minima with less noises: 🤫
