@@ -76,6 +76,7 @@ $$ \alpha = \frac{1}{1 + decayRate * epochNumber} * \alpha $$
 
 
 - For example, let's $\alpha = 0.2$ and decayRate = 1. Then:
+
 ![learning rate decay](./assets/Intro_to_Optimizers/Learning_Rate_Decay.png)
 
 - But, **learning rate decay** is typically not even considered when optimizing model training. But, this is something to know about.
