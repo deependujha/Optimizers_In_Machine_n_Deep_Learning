@@ -1,2 +1,2 @@
-# Optimizers in Deep Learning 🏃🏻
+# Optimizers in Machine & Deep Learning 🏃🏻
 

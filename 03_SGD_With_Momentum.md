@@ -6,9 +6,9 @@ To understand SGD, we first we need to have good understanding of couple of thin
 
 - a real-valued function is called convex if, the line segment between any two distinct points on the graph of the function lies above the graph between the two points. 
 
-![convex_&_concave](./assets/convex_concave.png)
+![convex_&_concave](./assets/SGD_Momentum/convex_concave.png)
 
-![convex_&_non_convex](./assets/convex_n_non_convex.png)
+![convex_&_non_convex](./assets/SGD_Momentum/convex_n_non_convex.png)
 
 ---
 
@@ -16,7 +16,7 @@ To understand SGD, we first we need to have good understanding of couple of thin
 
 - Simple gradient descent algorithms get stuck in local minima, or take too long to cross `saddle point` (because of very low gradient), or have a time crossing a high curvature.
 
-![momentum](./assets/momentum.png)
+![momentum](./assets/SGD_Momentum/momentum.png)
 
 - Gradient Descent with momentum can overcome these challenges.
 
@@ -26,7 +26,7 @@ To understand SGD, we first we need to have good understanding of couple of thin
 
 - Suppose you're travelling to your village. But, you don't know the direction. You ask people during your journey for the direction. You asked first person, he told you to go right, after sometime, you asked second person, he again told you to keep going right, similarly third and fourth person told you to go right. So, should you keep driving at the same speed or speed up in the right direction. This is what momentum is all about.
 
-![momentum_gif](./assets/momentum.gif)
+![momentum_gif](./assets/SGD_Momentum/momentum.gif)
 
 - Pink ball (SGD with momentum); Blue ball (Normal SGD)
 
@@ -42,9 +42,9 @@ To understand SGD, we first we need to have good understanding of couple of thin
 
 ## Mathematically:
 
-![sgd+momentum](./assets/sgd+momentum.png)
+![sgd+momentum](./assets/SGD_Momentum/sgd+momentum.png)
 
-![sgd_momentum_formula](./assets/sgd_momentum_formula-1.jpg)
+![sgd_momentum_formula](./assets/SGD_Momentum/sgd_momentum_formula-1.jpg)
 
 - We add the gradient with the EWMA (exponentially weighted moving average) of previous gradients.
 
@@ -60,6 +60,6 @@ To understand SGD, we first we need to have good understanding of couple of thin
 
 ### SGD with momentum converging to minima with less noises: 🤫
 
-![sgd_diagram](./assets/SGD_diagram.jpg)
+![sgd_diagram](./assets/SGD_Momentum/SGD_diagram.jpg)
 
 ---

@@ -47,7 +47,7 @@ $$ previous (X) = 1 / (1 - \beta) $$
 
 - If $\( \beta \)$ is 0.9, means, current days value depends on last 10 days values.
 
-![beta intuition](./assets/Beta_Intuition.png)
+![beta intuition](./assets/EWMA/Beta_Intuition.png)
 
 - $\(\beta\)$ = 0.98, means takes average of last 50 days. Someone's todays happiness depends on experiences of last 50 days, means very stable emotions. Neither too happy nor too sad.
 
@@ -59,7 +59,7 @@ $$ previous (X) = 1 / (1 - \beta) $$
 
 ### But, how can we say if today's EWMA depends on previous EWMA?
 
-![intuition](./assets/intuition_emwa.png)
+![intuition](./assets/EWMA/intuition_emwa.png)
 
 ---
 
