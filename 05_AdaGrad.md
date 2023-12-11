@@ -1,6 +1,10 @@
 # AdaGrad (Adaptive Gradient Algorithm) 😎
 
-- **`AdaGrad is a brilliant algorithm if some columns in your data are sparse (most data-points are zero)`**.
+- **`AdaGrad is a brilliant algorithm if some columns in your data are sparse (most data-points are zero)`**. For example, if there's a column of people having height above 7 feet. Most of the people are going to have value 0.
+
+- **`Contour plot of sparse dataset is very elongated.`**
+
+![contour plot of sparse dataset](./assets/AdaGrad/Contour_Plot_Of_Sparse_Data.png)
 
 - **Gradient in such cases remain very small and takes too long to reach minima via SGD, or SGD with Momentum, or NAG**.
 
