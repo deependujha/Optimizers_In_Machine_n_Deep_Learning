@@ -20,16 +20,14 @@ AdaGrad is an optimization algorithm designed for adapting the learning rate to 
 
 AdaGrad maintains a per-parameter learning rate that is inversely proportional to the square root of the sum of squared gradients up to the current time step.
 
-The update rule for parameter $\( w \)$ at time step $\( \t \)$ is given by:
+![AdaGrad formula](./assets/AdaGrad/AdaGrad_Formula.png)
 
-$\[ w_{t+1,i} = w_{t,i} - \frac{\eta}{\sqrt{G_{t,ii} + \epsilon}} \cdot g_{t,i} \]$
 
 Where:
-- $\( w_{t,i} \)$ = Parameter $\( i \)$ at time step $\( t \)$
-- $\( g_{t,i} \) = Gradient of the parameter \( i \) at time step \( t \)
-- \( G_{t,ii} \) = Sum of squares of past gradients for parameter \( i \) up to time step \( t \)
-- \( \eta \) = Learning rate
-- \( \epsilon \) = Small constant (to prevent division by zero)
+
+- $\( V_{t} \)$ = Sum of squares of past gradients
+- $\( \eta \)$ = Learning rate
+- $\( \epsilon \)$ = Small constant (to prevent division by zero)
 
 ## Properties
 
@@ -46,4 +44,4 @@ Where:
 
 ## Disadvantages 🚫
 
-- It never 
+- It never reaches
