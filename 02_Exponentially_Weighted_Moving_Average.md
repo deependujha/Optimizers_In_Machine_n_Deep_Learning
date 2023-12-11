@@ -1,0 +1,2 @@
+# Exponentially Weighted Moving Average 💹
+
