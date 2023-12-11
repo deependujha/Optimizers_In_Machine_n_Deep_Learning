@@ -126,4 +126,4 @@ print(my_ewma)
 
 $$ \hat{S_t} = \frac{S_t}{1 - \beta^{epoch}} $$
 
-- `t` is the epoch number **(we are raising power of Beta by the epoch number**).
+- `epoch` is the epoch number **(we are raising power of Beta by the epoch number**).
