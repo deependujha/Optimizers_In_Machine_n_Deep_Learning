@@ -4,8 +4,9 @@
 
 - **Gradient in such cases remain very small and takes too long to reach minima via SGD, or SGD with Momentum, or NAG**.
 
-![AdaGrad Visualization](./assets/AdaGrad/AdaGrad_Visualization.gif)
-white: `AdaGrad`; cyan: `Gradient Descent`
+| ![AdaGrad Visualization](./assets/AdaGrad/AdaGrad_Visualization.gif) | 
+|:--:| 
+| *white: `AdaGrad`; cyan: `Gradient Descent`* |
 
 - AdaGrad is very fast in such scenarios. 😎
 
