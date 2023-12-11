@@ -17,16 +17,16 @@ Some replace $(1 - \alpha)$ with $(\beta)$.
 $$ S_t = (1 - \beta) \times Y_t + \beta \times S_{t-1} $$
 
 Where:
-- $\( S_t \)$ = EWMA at time 't'
-- $\( Y_t \)$ = Observation at time 't'
-- $\( \alpha \)$ = Smoothing factor (0 < $\( \alpha \)$ ≤ 1)
-- $\( \beta \)$ = Decaying factor (0 < $\( \beta \)$ ≤ 1)
+- $S_t$ = EWMA at time 't'
+- $Y_t$ = Observation at time 't'
+- $\alpha$ = Smoothing factor (0 < $\alpha$ ≤ 1)
+- $\beta$ = Decaying factor (0 < $\beta$ ≤ 1)
 
-The smoothing factor $\( \alpha \)$ determines the rate of decay of the older observations' influence on the average.
+The smoothing factor $\alpha$ determines the rate of decay of the older observations' influence on the average.
 
-- **A smaller $\( \alpha \)$ assigns more weight to older observations, whereas a larger $\( \alpha \)$ gives more weight to recent data**.
+- **A smaller $\alpha$ assigns more weight to older observations, whereas a larger $\alpha$ gives more weight to recent data**.
 
-- **A larger $\( \beta \)$ assigns more weight to older observations, whereas a smaller $\( \beta \)$ gives more weight to recent data**.
+- **A larger $\beta$ assigns more weight to older observations, whereas a smaller $\beta$ gives more weight to recent data**.
 
 ---
 
@@ -39,21 +39,21 @@ The smoothing factor $\( \alpha \)$ determines the rate of decay of the older ob
 
 ---
 
-### Intuition of $\( \beta \)$ 😈
+### Intuition of $\beta$ 😈
 
 For intuition of beta, you can think of it as an average of last X days.
 
 $$ previous (X) = 1 / (1 - \beta) $$
 
-- If $\( \beta \)$ is 0.9, means, current days value depends on last 10 days values.
+- If $\beta$ is 0.9, means, current days value depends on last 10 days values.
 
 ![beta intuition](./assets/EWMA/Beta_Intuition.png)
 
-- $\(\beta\)$ = 0.98, means takes average of last 50 days. Someone's todays happiness depends on experiences of last 50 days, means very stable emotions. Neither too happy nor too sad.
+- $\beta$ = 0.98, means takes average of last 50 days. Someone's todays happiness depends on experiences of last 50 days, means very stable emotions. Neither too happy nor too sad.
 
-- $\(\beta\)$ = 0.1, means takes average of last 1 day. Someone's todays happiness depends on experiences of yesterday or today only, means very moody. Sometimes, too happy, sometimes too sad.
+- $\beta$ = 0.1, means takes average of last 1 day. Someone's todays happiness depends on experiences of yesterday or today only, means very moody. Sometimes, too happy, sometimes too sad.
 
-- **Generally, $\(\beta\)$ = 0.9 is taken as default.**
+- **Generally, $\beta$ = 0.9 is taken as default.**
 
 ---
 
@@ -111,3 +111,19 @@ print(ewma)
 print(my_ewma)
 
 ```
+
+---
+
+## Bias Correction 👨🏻‍💼
+
+- If we take $\beta = 0.9$, it means on an intuitive level to be taking average of last 10 data points.
+
+- We also assume, $S_{t-1}$ to be equal to 0. And hence, our $S_{t=1}$ comes to be $0.1 * Y_t$, which is very below actual $Y_t$ at time t=0.
+
+- Although, this difference is going to be fixed when we reach after starting first 10 data points. From then on, it will be indeed carrying weighted average of last 10 data points.
+
+- But, if we want to also fix the bias that we have to make at the starting by taking $S_{t=0} = 0$, we can do so by:
+
+$$ \hat{S_t} = \frac{S_t}{1 - \beta^{epoch}} $$
+
+- `t` is the epoch number **(we are raising power of Beta by the epoch number**).

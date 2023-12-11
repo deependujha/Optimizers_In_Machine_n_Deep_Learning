@@ -68,6 +68,20 @@ But, if you create a very sophisticated/deep model, it becomes very time consumi
 
 ---
 
+## Learning Rate Decay 🤓
+
+- Another technique to reduce time taken for model training is to use `Learning Rate Decay`.
+
+$$ \alpha = \frac{1}{1 + decayRate * epochNumber} * \alpha $$
+
+
+- For example, let's $\alpha = 0.2$ and decayRate = 1. Then:
+![learning rate decay](./assets/Intro_to_Optimizers/Learning_Rate_Decay.png)
+
+- But, **learning rate decay** is typically not even considered when optimizing model training. But, this is something to know about.
+
+---
+
 ## Let's tackle the challenge 🧑🏻‍💻
 
 - To tackle these issues, different optimizers where introduced. Some of them are:

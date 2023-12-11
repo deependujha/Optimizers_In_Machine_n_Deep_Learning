@@ -28,7 +28,9 @@ $$ \hat{m_t} = \frac{m_t} {1 - \beta_1^t}  $$
 
 $$ \hat{v_t} = \frac{v_t} {1 - \beta_2^t} $$
 
-- `t` is the epoch number.
+- `t` is the epoch number **(we are raising power of Beta by the epoch number**).
+
+#### Note 🚫: If you don't understand, see the last topic of [EWMA](./02_Exponentially_Weighted_Moving_Average.md)
 
 - And, the final formula is:
 
